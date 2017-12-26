@@ -10,8 +10,7 @@ export default class Index extends Component {
         height: 0
       }
     };
-
-}
+  }
 
   componentDidMount() {
     const deviceWidth = window.innerWidth;
@@ -31,11 +30,7 @@ export default class Index extends Component {
 
     const { width, height } = this.state.dimension;
 
-    canvas.width = width
-    canvas.height = height
-
     ctx.clearRect(0, 0, width, height);
-    
 
     ctx.drawImage(image, 0, 0, width, height);
 
@@ -44,14 +39,19 @@ export default class Index extends Component {
     const textValue = text.innerText || "bobo";
 
     const offsetX = textLocation.left - imageLocation.left;
-    const offsetY = textLocation.bottom - imageLocation.top;
+    const offsetY = textLocation.top - imageLocation.top;
 
     ctx.lineWidth = 5;
-    ctx.font = "20pt TrajanBold";
+    ctx.font = "2em TrajanBold";
     ctx.fillStyle = "black";
-    ctx.textAlign = "center";
     ctx.lineJoin = "round";
-    ctx.fillText(textValue, offsetX, offsetY);
+    ctx.fillText(textValue, parseInt(offsetX), parseInt(offsetY + 25));
+
+    var download = document.getElementById("download-link")
+    let link = document.createElement('a')
+    link.download = `${this.state.username}_festive_image.png`
+    link.href = canvas.toDataURL();
+    link.click()
   };
 
   handleChange = e => {
@@ -59,7 +59,8 @@ export default class Index extends Component {
     this.setState({ [name]: value });
   };
 
-  renderImage() {}
+  renderImage = () => {
+  }
 
   render() {
     const { width, height } = this.state.dimension;
@@ -87,13 +88,11 @@ export default class Index extends Component {
           <p id="imageText">{this.state.username || "bobo"}</p>
         </div>
         <div>
-          <a onClick={this.renderCanvas} href="#">
+          <a id="download-link" onClick={this.renderCanvas} href="">
             Dowload Image
           </a>
         </div>
-        <br />
-        <canvas id="canvas" />
-        <div style={{height, width}}/>
+        <canvas id="canvas" width={`${width}px`} height={`${height}px`} hidden/>
       </section>
     );
   }

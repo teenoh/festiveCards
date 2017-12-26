@@ -67,7 +67,7 @@ export default class Index extends Component {
     return (
       <section>
         <div>
-          Username:
+          Enter your name:
           <input
             id="user-input"
             type="text"
@@ -75,7 +75,7 @@ export default class Index extends Component {
             maxLength={9}
             onChange={this.handleChange}
             value={this.state.username}
-            placeholder="Enter username"
+            placeholder="Bobo"
           />
         </div>
         <div className="container" style={{ width, height }}>

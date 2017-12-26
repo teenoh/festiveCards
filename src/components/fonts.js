@@ -9,7 +9,7 @@ const font = [
         value: "TrajanRegular"
     },
     {
-        name: "Bebas Regular",
+        name: "Bebas  Regular",
         value: "bebasregular"
     },
     {

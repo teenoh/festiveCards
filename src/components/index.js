@@ -7,7 +7,7 @@ export default class Index extends Component {
     this.state = {
       username: "",
       color: "#ffffff",
-      font:"TrajanBold",
+      font: "TrajanBold",
       dimension: {
         width: 0,
         height: 0
@@ -36,6 +36,7 @@ export default class Index extends Component {
 
     ctx.clearRect(0, 0, width, height);
 
+
     ctx.drawImage(image, 0, 0, width, height);
 
     const textLocation = text.getBoundingClientRect();
@@ -54,7 +55,7 @@ export default class Index extends Component {
     var download = document.getElementById("download-link");
     let link = document.createElement("a");
     link.download = `${this.state.username}_festive_image.png`;
-    link.href = canvas.toDataURL();
+    link.href = canvas.toDataURL("image/png", 1);
     link.click();
   };
 
@@ -95,7 +96,11 @@ export default class Index extends Component {
 
             <span>
               Select Font :
-              <select name="font" onChange={this.handleChange} value={this.state.font}>
+              <select
+                name="font"
+                onChange={this.handleChange}
+                value={this.state.font}
+              >
                 {fonts.map((font, id) => (
                   <option value={font.value} style={{ fontFamily: font.value }}>
                     {font.name}
@@ -112,7 +117,10 @@ export default class Index extends Component {
             alt="festive"
             style={{ width: "inherit", height: "inherit" }}
           />
-          <p id="imageText" style={{ color: this.state.color, fontFamily: this.state.font }}>
+          <p
+            id="imageText"
+            style={{ color: this.state.color, fontFamily: this.state.font }}
+          >
             {this.state.username || "bobo"}
           </p>
         </div>

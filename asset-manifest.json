@@ -1,9 +1,13 @@
 {
-  "main.css": "static/css/main.4b479d5d.css",
-  "main.css.map": "static/css/main.4b479d5d.css.map",
-  "main.js": "static/js/main.12fba4d1.js",
-  "main.js.map": "static/js/main.12fba4d1.js.map",
+  "main.css": "static/css/main.63302085.css",
+  "main.css.map": "static/css/main.63302085.css.map",
+  "main.js": "static/js/main.be36c7be.js",
+  "main.js.map": "static/js/main.be36c7be.js.map",
   "static/media/TrajanPro-Bold.otf": "static/media/TrajanPro-Bold.64685c54.otf",
   "static/media/TrajanPro-Regular.otf": "static/media/TrajanPro-Regular.ab07eea1.otf",
+  "static/media/bebas-webfont.woff": "static/media/bebas-webfont.28550ba2.woff",
+  "static/media/bebas-webfont.woff2": "static/media/bebas-webfont.acefb437.woff2",
+  "static/media/bebasneue_regular-webfont.woff": "static/media/bebasneue_regular-webfont.20011b1a.woff",
+  "static/media/bebasneue_regular-webfont.woff2": "static/media/bebasneue_regular-webfont.f22c487b.woff2",
   "static/media/festive_card1.png": "static/media/festive_card1.4e051807.png"
 }

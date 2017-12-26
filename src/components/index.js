@@ -1,10 +1,13 @@
 import React, { Component } from "react";
+import fonts from "./fonts";
 
 export default class Index extends Component {
   constructor(props) {
     super(props);
     this.state = {
       username: "",
+      color: "#ffffff",
+      font:"TrajanBold",
       dimension: {
         width: 0,
         height: 0
@@ -22,7 +25,8 @@ export default class Index extends Component {
     this.setState({ dimension: newDimension });
   }
 
-  renderCanvas = () => {
+  renderCanvas = e => {
+    e.preventDefault();
     let canvas = document.getElementById("canvas"),
       text = document.getElementById("imageText"),
       image = document.getElementById("festive-image"),
@@ -42,16 +46,16 @@ export default class Index extends Component {
     const offsetY = textLocation.top - imageLocation.top;
 
     ctx.lineWidth = 5;
-    ctx.font = "2em TrajanBold";
-    ctx.fillStyle = "white";
+    ctx.font = `2em ${this.state.font}`;
+    ctx.fillStyle = this.state.color;
     ctx.lineJoin = "round";
-    ctx.fillText(textValue, parseInt(offsetX), parseInt(offsetY + 25));
+    ctx.fillText(textValue, parseInt(offsetX), parseInt(offsetY + 20));
 
-    var download = document.getElementById("download-link")
-    let link = document.createElement('a')
-    link.download = `${this.state.username}_festive_image.png`
+    var download = document.getElementById("download-link");
+    let link = document.createElement("a");
+    link.download = `${this.state.username}_festive_image.png`;
     link.href = canvas.toDataURL();
-    link.click()
+    link.click();
   };
 
   handleChange = e => {
@@ -59,8 +63,7 @@ export default class Index extends Component {
     this.setState({ [name]: value });
   };
 
-  renderImage = () => {
-  }
+  renderImage = () => {};
 
   render() {
     const { width, height } = this.state.dimension;
@@ -77,6 +80,30 @@ export default class Index extends Component {
             value={this.state.username}
             placeholder="Bobo"
           />
+          <br />
+          <div style={{ textAlign: "center" }}>
+            <span>
+              Choose color:
+              <input
+                id="color-input"
+                type="color"
+                name="color"
+                onChange={this.handleChange}
+                value={this.state.color}
+              />
+            </span>
+
+            <span>
+              Select Font :
+              <select name="font" onChange={this.handleChange} value={this.state.font}>
+                {fonts.map((font, id) => (
+                  <option value={font.value} style={{ fontFamily: font.value }}>
+                    {font.name}
+                  </option>
+                ))}
+              </select>
+            </span>
+          </div>
         </div>
         <div className="container" style={{ width, height }}>
           <img
@@ -85,14 +112,21 @@ export default class Index extends Component {
             alt="festive"
             style={{ width: "inherit", height: "inherit" }}
           />
-          <p id="imageText">{this.state.username || "bobo"}</p>
+          <p id="imageText" style={{ color: this.state.color, fontFamily: this.state.font }}>
+            {this.state.username || "bobo"}
+          </p>
         </div>
         <div>
           <a id="download-link" onClick={this.renderCanvas} href="">
-            Dowload Image
+            Download Image
           </a>
         </div>
-        <canvas id="canvas" width={`${width}px`} height={`${height}px`} hidden/>
+        <canvas
+          id="canvas"
+          width={`${width}px`}
+          height={`${height}px`}
+          hidden
+        />
       </section>
     );
   }

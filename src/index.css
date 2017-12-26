@@ -15,8 +15,22 @@
   src: url("./assets/fonts/TrajanPro-Regular.otf");
 }
 
-p {
-  font-family: "TrajanBold";
+@font-face {
+  font-family: 'bebasregular';
+  src: url('./assets/fonts/bebas-webfont.woff2') format('woff2'),
+       url('./assets/fonts/bebas-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'bebas_neue_regular';
+  src: url('./assets/fonts/bebasneue_regular-webfont.woff2') format('woff2'),
+       url('./assets/fonts/bebasneue_regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
 
 .App {
@@ -53,7 +67,8 @@ section {
 #imageText {
   font-size: 2em;
   position: absolute;
-  bottom: 10%;
+  bottom: 12%;
   left: 15%;
-  color: whitesmoke
+  color: whitesmoke;
+  font-family: "TrajanBold";
 }

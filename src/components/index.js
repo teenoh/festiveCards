@@ -133,7 +133,7 @@ export default class Index extends Component {
           id="canvas"
           width={`${width}px`}
           height={`${height}px`}
-          hidden
+          
         />
       </section>
     );

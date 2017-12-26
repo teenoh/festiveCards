@@ -1,5 +1,60 @@
-body {
+* {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "TrajanBold";
+  src: url("./assets/fonts/TrajanPro-Bold.otf");
+}
+
+@font-face {
+  font-family: "TrajanRegular";
+  src: url("./assets/fonts/TrajanPro-Regular.otf");
+}
+
+p {
+  font-family: "TrajanBold";
+}
+
+.App {
+  width: 100%;
+  text-align: center;
+}
+
+.App-header {
+  background-color: #222;
+  height: 50px;
+  padding: 5px;
+  color: white;
+}
+
+
+section {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#user-input {
+  line-height: 5px;
+  margin: 10px;
+}
+
+.container {
+  position: relative;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+#festive-image {
+}
+
+#imageText {
+  font-size: 2em;
+  position: absolute;
+  bottom: 10%;
+  left: 15%;
 }

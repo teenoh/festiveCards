@@ -43,7 +43,7 @@ export default class Index extends Component {
 
     ctx.lineWidth = 5;
     ctx.font = "2em TrajanBold";
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "whitesmoke";
     ctx.lineJoin = "round";
     ctx.fillText(textValue, parseInt(offsetX), parseInt(offsetY + 25));
 

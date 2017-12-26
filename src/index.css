@@ -49,12 +49,11 @@ section {
   margin-bottom: 10px;
 }
 
-#festive-image {
-}
 
 #imageText {
   font-size: 2em;
   position: absolute;
   bottom: 10%;
   left: 15%;
+  color: whitesmoke
 }

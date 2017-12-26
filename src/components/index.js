@@ -14,8 +14,8 @@ export default class Index extends Component {
 
   componentDidMount() {
     const deviceWidth = window.innerWidth;
-    const width = Math.min(400, deviceWidth - 20);
-    const height = Math.min(400, deviceWidth - 20);
+    const width = Math.min(400, deviceWidth - 40);
+    const height = Math.min(400, deviceWidth - 40);
     const newDimension = { width: width, height: height };
     console.log(newDimension);
 
